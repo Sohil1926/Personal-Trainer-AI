@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import firebase from '../../Firebase';
 
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from 'reactstrap';
 
 const Header = () => {
+  const db = firebase.firestore();
+
+  const [accuracy, setAccuracy] = useState(0);
+  useEffect(() => {
+    var docRef = db.collection('users').doc('twnVnizY2DJk2UtXlZMv');
+    docRef
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setAccuracy(doc.data().accuracy);
+        } else {
+          // doc.data() will be undefined in this case
+          console.log('No such document!');
+        }
+      })
+      .catch((error) => {
+        console.log('Error getting document:', error);
+      });
+  }, []);
+
   return (
     <>
       <div className='header bg-gradient-dark pb-8 pt-5 pt-md-8'>
@@ -20,7 +41,7 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          Traffic
+                          Posture
                         </CardTitle>
                         <span className='h2 font-weight-bold mb-0'>
                           350,897
@@ -50,9 +71,11 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          New users
+                          Accuracy
                         </CardTitle>
-                        <span className='h2 font-weight-bold mb-0'>2,356</span>
+                        <span className='h2 font-weight-bold mb-0'>
+                          {accuracy * 100}%
+                        </span>
                       </div>
                       <Col className='col-auto'>
                         <div className='icon icon-shape bg-warning text-white rounded-circle shadow'>
@@ -61,9 +84,10 @@ const Header = () => {
                       </Col>
                     </Row>
                     <p className='mt-3 mb-0 text-muted text-sm'>
-                      <span className='text-danger mr-2'>
-                        <i className='fas fa-arrow-down' /> 3.48%
-                      </span>{' '}
+                      <span className='text-success mr-2'>
+                        <i className='fas fa-arrow-up' />
+                      </span>
+                      {' 3% '}
                       <span className='text-nowrap'>Since last week</span>
                     </p>
                   </CardBody>

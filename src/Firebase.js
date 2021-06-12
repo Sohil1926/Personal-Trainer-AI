@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 
 let config = {
   apiKey: 'AIzaSyCZAyMBYm83CrEstGgqz4WabOL3yoWocYI',
@@ -9,7 +9,6 @@ let config = {
   appId: '1:215380103653:web:e172d71bd451c281481f0c',
   measurementId: 'G-NSC5SYW8DC',
 };
-firebase.initializeApp(config);
 
 export default !firebase.apps.length
   ? firebase.initializeApp(config)

@@ -1,44 +1,40 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap";
+import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <Row className="align-items-center justify-content-xl-between">
-        <Col xl="6">
-          <div className="copyright text-center text-xl-left text-muted">
-            © {new Date().getFullYear()}{" "}
+    <footer className='footer'>
+      <Row className='align-items-center justify-content-xl-between'>
+        <Col xl='6'>
+          <div className='copyright text-center text-xl-left text-muted'>
+            © {new Date().getFullYear()}{' '}
             <a
-              className="font-weight-bold ml-1"
-              href="https://www.creative-tim.com?ref=adr-admin-footer"
-              rel="noopener noreferrer"
-              target="_blank"
+              className='font-weight-bold ml-1'
+              href='#'
+              rel='noopener noreferrer'
+              target='_blank'
             >
-              Creative Tim
+              PT > AI
             </a>
           </div>
         </Col>
 
-        <Col xl="6">
-          <Nav className="nav-footer justify-content-center justify-content-xl-end">
+        <Col xl='6'>
+          <Nav className='nav-footer justify-content-center justify-content-xl-end'>
             <NavItem>
-              <NavLink
-                href="https://www.creative-tim.com?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Creative Tim
+              <NavLink href='#' rel='noopener noreferrer' target='_blank'>
+                PT > AI
               </NavLink>
             </NavItem>
 
             <NavItem>
               <NavLink
-                href="https://www.creative-tim.com/presentation?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
+                href='https://www.creative-tim.com/presentation?ref=adr-admin-footer'
+                rel='noopener noreferrer'
+                target='_blank'
               >
                 About Us
               </NavLink>
@@ -46,9 +42,9 @@ const Footer = () => {
 
             <NavItem>
               <NavLink
-                href="http://blog.creative-tim.com?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
+                href='http://blog.creative-tim.com?ref=adr-admin-footer'
+                rel='noopener noreferrer'
+                target='_blank'
               >
                 Blog
               </NavLink>
@@ -56,9 +52,9 @@ const Footer = () => {
 
             <NavItem>
               <NavLink
-                href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
+                href='https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-admin-footer'
+                rel='noopener noreferrer'
+                target='_blank'
               >
                 MIT License
               </NavLink>
