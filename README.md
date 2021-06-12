@@ -1,1 +1,4 @@
-# PT < AI
+# Personal-Trainer-AI
+An AI Personal Trainer.
+
+React, Firebase
