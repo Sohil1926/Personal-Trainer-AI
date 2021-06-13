@@ -33,7 +33,7 @@ const Profile = () => {
                         alt="..."
                         className="rounded-circle"
                         src={
-                          require("../../assets/img/theme/team-4-800x800.jpg")
+                          require("../../assets/img/theme/team-3-800x800.jpg")
                             .default
                         }
                       />
@@ -43,15 +43,7 @@ const Profile = () => {
               </Row>
               <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                 <div className="d-flex justify-content-between">
-                  <Button
-                    className="mr-4"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
-                    Connect
-                  </Button>
+                 
                   <Button
                     className="float-right"
                     color="default"
@@ -84,26 +76,28 @@ const Profile = () => {
                 </Row>
                 <div className="text-center">
                   <h3>
-                    Jessica Jones
+                    George Jones
                     <span className="font-weight-light">, 27</span>
                   </h3>
                   <div className="h5 font-weight-300">
                     <i className="ni location_pin mr-2" />
-                    Bucharest, Romania
+                    Windsor, Ontario
                   </div>
                   <div className="h5 mt-4">
                     <i className="ni business_briefcase-24 mr-2" />
-                    Solution Manager - Creative Tim Officer
+                        Athlete - Injured Arm
                   </div>
                   <div>
                     <i className="ni education_hat mr-2" />
-                    University of Computer Science
+                    University of Windsor
                   </div>
                   <hr className="my-4" />
                   <p>
-                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
-                    Nick Murphy — writes, performs and records all of his own
-                    music.
+                    George — humerus, upper arm bone reaching from the shoulder to the elbow
+                    - deformity, arm appears to be crooked
+                    - severe pain
+                    - pain that increases with movement
+
                   </p>
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
                     Show more
@@ -117,7 +111,7 @@ const Profile = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">My account</h3>
+                    <h3 className="mb-0">Patient Account</h3>
                   </Col>
                   <Col className="text-right" xs="4">
                     <Button
@@ -134,7 +128,7 @@ const Profile = () => {
               <CardBody>
                 <Form>
                   <h6 className="heading-small text-muted mb-4">
-                    User information
+                    Patient information
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
@@ -148,10 +142,10 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="lucky.jesse"
+                            defaultValue="george.jones"
                             id="input-username"
                             placeholder="Username"
-                            type="text"
+                          
                           />
                         </FormGroup>
                       </Col>
@@ -166,7 +160,7 @@ const Profile = () => {
                           <Input
                             className="form-control-alternative"
                             id="input-email"
-                            placeholder="jesse@example.com"
+                            placeholder="georgejones@gmail.com"
                             type="email"
                           />
                         </FormGroup>
@@ -183,7 +177,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Lucky"
+                            defaultValue="George"
                             id="input-first-name"
                             placeholder="First name"
                             type="text"
@@ -200,7 +194,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Jesse"
+                            defaultValue="Jones"
                             id="input-last-name"
                             placeholder="Last name"
                             type="text"
@@ -226,7 +220,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            defaultValue="1800 Liberty St"
                             id="input-address"
                             placeholder="Home Address"
                             type="text"
@@ -245,7 +239,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="New York"
+                            defaultValue="Windsor"
                             id="input-city"
                             placeholder="City"
                             type="text"
@@ -262,7 +256,7 @@ const Profile = () => {
                           </label>
                           <Input
                             className="form-control-alternative"
-                            defaultValue="United States"
+                            defaultValue="Canada"
                             id="input-country"
                             placeholder="Country"
                             type="text"
@@ -280,7 +274,7 @@ const Profile = () => {
                           <Input
                             className="form-control-alternative"
                             id="input-postal-code"
-                            placeholder="Postal code"
+                            placeholder="N9E 1J2"
                             type="number"
                           />
                         </FormGroup>
@@ -297,8 +291,7 @@ const Profile = () => {
                         className="form-control-alternative"
                         placeholder="A few words about you ..."
                         rows="4"
-                        defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and
-                        Open Source."
+                        defaultValue="27 year old male, plays lots of sports - currently Massey Hacks is his favourite sport but he gets injured quite often."
                         type="textarea"
                       />
                     </FormGroup>
