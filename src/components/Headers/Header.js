@@ -8,6 +8,10 @@ const Header = () => {
   const db = firebase.firestore();
 
   const [accuracy, setAccuracy] = useState(0);
+  const [gender, setGender] = useState('');
+  const [age, setAge] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [injury, setInjury] = useState('');
   useEffect(() => {
     var docRef = db.collection('users').doc('twnVnizY2DJk2UtXlZMv');
     docRef
@@ -15,6 +19,10 @@ const Header = () => {
       .then((doc) => {
         if (doc.exists) {
           setAccuracy(doc.data().accuracy);
+          setGender(doc.data().gender);
+          setAge(doc.data().age);
+          setHeight(doc.data().height);
+          setInjury(doc.data().injury);
         } else {
           // doc.data() will be undefined in this case
           console.log('No such document!');
@@ -24,10 +32,15 @@ const Header = () => {
         console.log('Error getting document:', error);
       });
   }, []);
-
+  function capitalize(s) {
+    return s ? s[0].toUpperCase() + s.slice(1) : '';
+  }
   return (
     <>
-      <div className='header bg-gradient-dark pb-8 pt-5 pt-md-8'>
+      <div
+        className='header pb-8 pt-5 pt-md-8'
+        style={{ backgroundColor: 'black' }}
+      >
         <Container fluid>
           <div className='header-body'>
             {/* Card stats */}
@@ -41,10 +54,10 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          Posture
+                          Gender
                         </CardTitle>
                         <span className='h2 font-weight-bold mb-0'>
-                          350,897
+                          {capitalize(gender)}
                         </span>
                       </div>
                       <Col className='col-auto'>
@@ -53,12 +66,12 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className='mt-3 mb-0 text-muted text-sm'>
+                    {/* <p className='mt-3 mb-0 text-muted text-sm'>
                       <span className='text-success mr-2'>
                         <i className='fa fa-arrow-up' /> 3.48%
                       </span>{' '}
                       <span className='text-nowrap'>Since last month</span>
-                    </p>
+                    </p> */}
                   </CardBody>
                 </Card>
               </Col>
@@ -71,11 +84,9 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          Accuracy
+                          Age
                         </CardTitle>
-                        <span className='h2 font-weight-bold mb-0'>
-                          {accuracy * 100}%
-                        </span>
+                        <span className='h2 font-weight-bold mb-0'>{age}</span>
                       </div>
                       <Col className='col-auto'>
                         <div className='icon icon-shape bg-warning text-white rounded-circle shadow'>
@@ -83,13 +94,13 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className='mt-3 mb-0 text-muted text-sm'>
+                    {/* <p className='mt-3 mb-0 text-muted text-sm'>
                       <span className='text-success mr-2'>
                         <i className='fas fa-arrow-up' />
                       </span>
                       {' 3% '}
                       <span className='text-nowrap'>Since last week</span>
-                    </p>
+                    </p> */}
                   </CardBody>
                 </Card>
               </Col>
@@ -102,9 +113,11 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          Sales
+                          Height
                         </CardTitle>
-                        <span className='h2 font-weight-bold mb-0'>924</span>
+                        <span className='h2 font-weight-bold mb-0'>
+                          {height}
+                        </span>
                       </div>
                       <Col className='col-auto'>
                         <div className='icon icon-shape bg-yellow text-white rounded-circle shadow'>
@@ -112,12 +125,12 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className='mt-3 mb-0 text-muted text-sm'>
+                    {/* <p className='mt-3 mb-0 text-muted text-sm'>
                       <span className='text-warning mr-2'>
                         <i className='fas fa-arrow-down' /> 1.10%
                       </span>{' '}
                       <span className='text-nowrap'>Since yesterday</span>
-                    </p>
+                    </p> */}
                   </CardBody>
                 </Card>
               </Col>
@@ -130,9 +143,11 @@ const Header = () => {
                           tag='h5'
                           className='text-uppercase text-muted mb-0'
                         >
-                          Performance
+                          Injury
                         </CardTitle>
-                        <span className='h2 font-weight-bold mb-0'>49,65%</span>
+                        <span className='h2 font-weight-bold mb-0'>
+                          {capitalize(injury)}
+                        </span>
                       </div>
                       <Col className='col-auto'>
                         <div className='icon icon-shape bg-info text-white rounded-circle shadow'>
@@ -140,12 +155,12 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className='mt-3 mb-0 text-muted text-sm'>
+                    {/* <p className='mt-3 mb-0 text-muted text-sm'>
                       <span className='text-success mr-2'>
                         <i className='fas fa-arrow-up' /> 12%
                       </span>{' '}
                       <span className='text-nowrap'>Since last month</span>
-                    </p>
+                    </p> */}
                   </CardBody>
                 </Card>
               </Col>

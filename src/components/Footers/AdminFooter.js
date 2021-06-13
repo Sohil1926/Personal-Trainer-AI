@@ -17,7 +17,7 @@ const Footer = () => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              PT > AI
+              PT {'>'} AI
             </a>
           </div>
         </Col>
@@ -26,7 +26,7 @@ const Footer = () => {
           <Nav className='nav-footer justify-content-center justify-content-xl-end'>
             <NavItem>
               <NavLink href='#' rel='noopener noreferrer' target='_blank'>
-                PT > AI
+                PT {'>'} AI
               </NavLink>
             </NavItem>
 
